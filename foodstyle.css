@@ -1,6 +1,5 @@
 html{
    font-family: 'Nunito', verdana;
-   text-align: center;
 }
 
 body{
@@ -9,7 +8,8 @@ body{
 
 header{ 
    background-color: #26a3b3;
-   margin-bottom: 20px;
+   margin: 0px;
+   text-align: center;
 }
 
 .title{
@@ -23,32 +23,96 @@ h1{
    max-width: 500px;
 }
 
+nav{
+  background-color: grey;
+  margin: 0px;
+}
+
+ul{
+  margin: 0px;
+  list-style-type: none;
+}
+
+.navItem, .navC{
+  display: inline-block;
+  color: white;
+  padding: 0px 10px;
+}
+
+.navItem:hover{
+  background-color: #607D8B;
+  cursor: pointer;
+}
+
+.dropList{
+  color: #607D8B;
+  background-color: #e4e2e2;
+  margin-left: 40px;
+  max-width: 80%;
+  box-shadow: 3px 3px 5px #80808075;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+
+.foodList{
+  max-height: 500px;
+  min-height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.foodList li{
+  padding: 0px 5px;
+  min-width: 110px;
+  text-align: center;
+}
+
+.foodList li:hover{
+  color: #26a3b3;
+  cursor: pointer;
+}
+
 main{
    color: white;
 }
 
 .select-loc{
+   text-align: center;
    position: relative;
-   background-color: rgba(16, 16, 152, 0.85);
+   background-color: #26a3b3;
    border-radius: 20px 20px;
    margin: auto;
+   margin-top: 30px;
    width: 50%;
    max-width: 500px;
-   border: 2px solid black;
+   border: 2px solid grey;
 }
 
 .location{
    margin: 0px;
    list-style-type: none;
-   padding: 10px;
+   padding: 10px 0px;
    display: list-item;
    cursor: pointer;
 }
 
-#border{
-   border-top: 2px solid black;
-   border-bottom: 2px solid black;
-   padding: 18px;
+.border{
+   border-top: 2px solid grey;
+   border-bottom: 2px solid grey;
+   padding: 15px 24px;
+}
+
+.selectB{
+  font-family: 'Nunito', verdana;
+  padding: 12px;
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: #26a3b3;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 a{
@@ -56,15 +120,111 @@ a{
 }
 
 #option{
+   text-align: center;
    position: relative;
-   border: 2px solid black;
+   border: 2px solid grey;
    border-radius: 20px 20px;
    margin: auto;
    width: 50%;
    max-width: 500px;
-   background-color: rgba(16, 16, 152, 0.85);
+   background-color: #26a3b3;
 }
 
 .hidden{
    display: none;
+}
+
+#optput, #remove{
+  text-align: center;
+}
+
+#remove{
+  font-family: 'Nunito', verdana;
+  padding: 0px 5px;
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: #26a3b3;
+  font-size: 19px;
+}
+
+#remove:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#add{
+  background-color: #607D8B;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 35px;
+  z-index: 1;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 8px 15px;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px #80808075;
+}
+
+.modal {
+  font-family: 'Nunito', verdana;
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  color: #607D8B;
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 20px 20px;
+  width: 60%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #607D8B;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form div{
+  padding: 5px;
+}
+
+#submitAdd{
+  font-family: 'Nunito', verdana;
+  padding: 12px;
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: #26a3b3;
+  border-radius: 15px 15px;
+  font-size: 15px;
+}
+
+#submitAdd:hover{
+  background-color: #607D8B;
+  cursor: pointer;
 }
