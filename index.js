@@ -1,41 +1,78 @@
 /*
  * Variables
  */
-var eatOut = ["Block 15", "McMenamins", "Spaghetti Factory", "Pastini"];
-var takeOut = ["Subway", "Thai", "Chipolte", "Panda", "Dominos", "Local Boyz"];
-var homeCooking = ["Spaghetti", "Sandwich", "Pesto Pasta", "Dutch Puff", "French Toast", "Quesadilla"];
+var eatList = document.getElementsByClassName('navE');
+for (var i = 0; i < eatList.length; i++) {
+  eatList[i].addEventListener('click', displayEatList);
+}
 
-var locs = document.getElementsByClassName('location');
-for(var i = 0; i < locs.length; i++){
-   locs[i].addEventListener('click', displayOption);
+var takeList = document.getElementsByClassName('navT');
+for (var i = 0; i < takeList.length; i++) {
+  takeList[i].addEventListener('click', displayTakeList);
+}
+
+var cookList = document.getElementsByClassName('navC');
+for (var i = 0; i < cookList.length; i++) {
+  cookList[i].addEventListener('click', displayCookList);
+}
+
+var modal = document.getElementById('myModal');
+var btn = document.getElementById('add');
+var span = document.getElementsByClassName("close")[0];
+
+/*
+ * Modal
+ */
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 /*
  * Displays option
  */
-function displayOption(event){
-   var optionDiv = document.getElementById('option');
-   var output = getOption(event);
-   document.getElementById("output").innerHTML = output;
-   optionDiv.classList.remove("hidden");
+function displayOption(param) {
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp = new XMLHttpRequest();
+  } else {
+    // code for IE6, IE5
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.open("GET", "displayOption.php?q="+param, true);
+  xmlhttp.send();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("showOpt").innerHTML = this.responseText;
+    }
+  };
+  var optionDiv = document.getElementById('option');
+  optionDiv.classList.remove("hidden");
 }
 
 /*
- * Finds the option and returns random output
+ * Display nav lists
  */
-function getOption(event){
-   if(event.target.id == "c")
-      return homeCooking[randomNum(homeCooking)];
-   if(event.target.id == "t")
-      return takeOut[randomNum(takeOut)];
-   if(event.target.id == "e")
-      return eatOut[randomNum(eatOut)];
+function displayEatList(event) {
+  var eList = document.getElementById('el');
+  eList.classList.toggle("hidden");
 }
 
-/*
- * Generates and returns random number of array length
- */
-function randomNum(array){
-   return Math.floor(Math.random() * array.length);
+function displayTakeList(event) {
+  var tList = document.getElementById('tl');
+  tList.classList.toggle("hidden");
 }
 
+function displayCookList(event) {
+  var cList = document.getElementById('cl');
+  cList.classList.toggle("hidden");
+}
