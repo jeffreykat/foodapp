@@ -114,7 +114,7 @@ $type = $_GET['q'];
 		while($getc->fetch()){
 			echo "<h2>" . $namec . "</h2>";
 			echo "<h3>Cook time: " . $cooktime . " minutes</h3>";
-			echo "<h3>Cost: " . $costc . "</h3>";
+			echo "<h3>Cost: $" . $costc . "</h3>";
 		}
   }
 

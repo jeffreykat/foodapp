@@ -9,7 +9,7 @@
         $author="Katherine Jeffrey";
   ?>
 	<title>
-		<?php echo $author.", ".$sitename; ?>
+		Select a Meal
 	</title>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -17,9 +17,10 @@
 	<meta name="description" content="<?php echo $slogan;?>" />
 	<meta name="author" content="<?php echo $author; ?>" />
 
-	<link href="cs340.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" media="screen">
-	<!--favicon-->
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="cs340.css" media="screen">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<?php
   //Turn on error reporting
@@ -35,18 +36,18 @@ if(!$mysqli || $msqli->connect_errno){
 
 <body>
 	<header>
-		<h1 class="title">Select a Meal</h1>
+    <div class="title"><strong>Select a Meal</strong></div>
 	</header>
 	<nav>
 		<ul>
-			<li class="navItem navE">
-				<h3>Eat Out</h3>
+			<li class="navItem" id="navE">
+				<strong>Dine Out</strong>
 			</li>
-			<li class="navItem navT">
-				<h3>Take Out</h3>
+			<li class="navItem" id="navT">
+				<strong>Take Out</strong>
 			</li>
-			<li class="navItem navC">
-				<h3>Cook at Home</h3>
+			<li class="navItem" id="navC">
+				<strong>Cook at Home</strong>
 			</li>
 		</ul>
 	</nav>
@@ -109,13 +110,14 @@ if(!$mysqli || $msqli->connect_errno){
 			</ul>
 		</div>
 			<div class="select-loc">
-				<p class="location" id="e"><input type="button" value="Eat Out" class="selectB" name="eatout" onclick="displayOption(this.name)"></p>
+				<p class="location" id="e"><input type="button" value="Dine Out" class="selectB" name="eatout" onclick="displayOption(this.name)"></p>
 				<p class="location border" id="t"><input type="button" value="Take Out" class="selectB" name="takeout" onclick="displayOption(this.name)"></p>
 				<p class="location" id="c"><input type="button" value="Cook at Home" class="selectB" name="cookhome" onclick="displayOption(this.name)"></p>
 			</div>
 			<br>
 		<form method="post" action="removefood.php">
 			<div id="option" class="hidden" name="display">
+        <span id="closeOp">&times;</span>
 				<p id="showOpt">
 					<?php include 'displayOption.php'; ?>
 				</p>
@@ -154,6 +156,7 @@ if(!$mysqli || $msqli->connect_errno){
 		<div id="add">
 			+
 		</div>
+    <footer><a href="http://people.oregonstate.edu/~jeffreyk/website/" target="_blank">Katherine Jeffrey</a> &copy; 2018 </footer>
 	</main>
 	<script src="index.js"></script>
 </body>

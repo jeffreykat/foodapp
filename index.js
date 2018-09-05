@@ -1,24 +1,21 @@
 /*
  * Variables
  */
-var eatList = document.getElementsByClassName('navE');
-for (var i = 0; i < eatList.length; i++) {
-  eatList[i].addEventListener('click', displayEatList);
-}
 
-var takeList = document.getElementsByClassName('navT');
-for (var i = 0; i < takeList.length; i++) {
-  takeList[i].addEventListener('click', displayTakeList);
-}
+var eatList = document.getElementById('navE');
+eatList.addEventListener('click', displayEatList);
 
-var cookList = document.getElementsByClassName('navC');
-for (var i = 0; i < cookList.length; i++) {
-  cookList[i].addEventListener('click', displayCookList);
-}
+var takeList = document.getElementById('navT');
+takeList.addEventListener('click', displayTakeList);
+
+var cookList = document.getElementById('navC');
+cookList.addEventListener('click', displayCookList);
 
 var modal = document.getElementById('myModal');
 var btn = document.getElementById('add');
 var span = document.getElementsByClassName("close")[0];
+var optionDiv = document.getElementById('option');
+var cOp = document.getElementById("closeOp");
 
 /*
  * Modal
@@ -32,9 +29,9 @@ span.onclick = function() {
 }
 
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 
 /*
@@ -55,8 +52,16 @@ function displayOption(param) {
       document.getElementById("showOpt").innerHTML = this.responseText;
     }
   };
-  var optionDiv = document.getElementById('option');
   optionDiv.classList.remove("hidden");
+}
+
+window.onclick = function() {
+  optionDiv.classList.add("hidden");
+  optionDiv.style.display = "none";
+}
+
+cOp.onclick = function(event) {
+  optionDiv.classList.add("hidden");
 }
 
 /*
@@ -65,6 +70,13 @@ function displayOption(param) {
 function displayEatList(event) {
   var eList = document.getElementById('el');
   eList.classList.toggle("hidden");
+}
+
+window.onclick = function(event) {
+  var eList = document.getElementById('el');
+  if (event.target == eatList) {
+    eList.classList.add("hidden");
+  }
 }
 
 function displayTakeList(event) {

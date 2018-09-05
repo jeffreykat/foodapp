@@ -1,0 +1,308 @@
+html{
+   font-family: 'Nunito', verdana;
+}
+
+body{
+   margin: 0px;
+}
+
+header{ 
+   background-color: #26a3b3;
+   margin: 0px;
+   text-align: center;
+}
+
+.title{
+  margin: 0px;
+  font-size: large;
+   color: white;
+   padding: 20px 5px;
+}
+
+h1{
+   margin: auto;
+   width: 50%;
+   font-size: 1em;
+}
+
+nav{
+  background-color: grey;
+  margin: 0px;
+}
+
+ul{
+  margin: 0px;
+  list-style-type: none;
+}
+
+.navItem{
+  display: inline-block;
+  color: white;
+  padding: 5px 10px;
+}
+
+.navItem:hover{
+  background-color: #607D8B;
+  cursor: pointer;
+}
+
+.dropList{
+  color: #607D8B;
+  background-color: #e4e2e2;
+  margin-left: 40px;
+  max-width: 80%;
+  box-shadow: 3px 3px 5px #80808075;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+
+.foodList{
+  max-height: 500px;
+  min-height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.foodList li{
+  padding: 0px 5px;
+  min-width: 110px;
+  text-align: center;
+}
+
+.foodList li:hover{
+  color: #26a3b3;
+  cursor: pointer;
+}
+
+main{
+   color: white;
+}
+
+.select-loc{
+   text-align: center;
+   position: relative;
+   background-color: #26a3b3;
+   border-radius: 20px 20px;
+   margin: auto;
+   margin-top: 30px;
+   width: 50%;
+   max-width: 500px;
+   border: 2px solid grey;
+}
+
+#closeOp {
+  color: grey;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+#closeOp:hover,
+#closeOp:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input[type="button"]{
+  outline: none;
+}
+
+.location{
+   margin: 0px;
+   list-style-type: none;
+   padding: 10px 0px;
+   display: list-item;
+   cursor: pointer;
+}
+
+.location:hover {
+  /*background-color: #259bab;*/
+}
+
+.border{
+   border-top: 2px solid grey;
+   border-bottom: 2px solid grey;
+   padding: 15px 24px;
+}
+
+.selectB{
+  font-family: 'Nunito', verdana;
+  padding: 12px;
+  border: none;
+  text-decoration: none;
+  background-color: #26a3b3;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+a{
+   color: white;
+}
+
+#option{
+   text-align: center;
+   position: relative;
+   border: 2px solid grey;
+   border-radius: 20px 20px;
+   margin: auto;
+  margin-bottom: 100px;
+   width: 50%;
+   max-width: 500px;
+   background-color: #26a3b3;
+}
+
+.hidden{
+   display: none;
+}
+
+#optput, #remove{
+  text-align: center;
+}
+
+#remove{
+  font-family: 'Nunito', verdana;
+  padding: 0px 5px;
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: #26a3b3;
+  font-size: 19px;
+}
+
+#remove:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#add{
+  background-color: #607D8B;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 35px;
+  z-index: 1;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px #80808075;
+}
+
+.modal {
+  font-family: 'Nunito', verdana;
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  color: #607D8B;
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 20px 20px;
+  width: 60%;
+}
+
+select{
+  border-radius: 10px 10px;
+  padding: 2px 5px;
+  outline: none;
+}
+
+input[type="text"]{
+  border-radius: 20px 20px;
+  padding: 2px 5px;
+  outline: none;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #607D8B;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form div{
+  padding: 5px;
+}
+
+#submitAdd{
+  font-family: 'Nunito', verdana;
+  padding: 12px;
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: #26a3b3;
+  border-radius: 15px 15px;
+  font-size: 15px;
+}
+
+#submitAdd:hover{
+  background-color: #607D8B;
+  cursor: pointer;
+}
+
+footer{
+  background-color: grey;
+  color: white;
+  margin: 0px;
+  padding: 3px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+  color: #26a3b3;
+}
+
+@media all and (min-width: 600px) {
+  .title {
+    font-size: x-large;
+    padding: 20px 20px 20px 20px;
+  }
+  h1 {
+    max-width: 500px;
+  }
+}
+
+@media all and (min-width: 1800px) {
+  .title {
+    font-size: xx-large;
+    padding: 20px 20px 20px 20px;
+  }
+  h1 {
+    max-width: 600px;
+  }
+}
+
